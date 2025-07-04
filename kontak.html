@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontak - Website Karya Guna 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="darkToggle">🌙</button>
+
+  <header>
+    <h1>Hubungi Kami</h1>
+  </header>
+
+  <div class="main">
+    <nav>
+      <ul>
+        <li><a href="home.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Kontak Info</h2>
+      <p>📧 Email: info@karyaguna.sch.id</p>
+      <p>📞 Telp: 0812-3456-7890</p>
+      <p>📍 Alamat: Jl. Karya No. 2, Bekasi</p>
+
+      <h3>Kirim Pesan</h3>
+      <form>
+        <label>Nama:</label><br>
+        <input type="text" required><br>
+
+        <label>Email:</label><br>
+        <input type="email" required><br>
+
+        <label>Pesan:</label><br>
+        <textarea rows="4" required></textarea><br>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Website Karya Guna 2</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    const body = document.body;
+    if (localStorage.getItem('dark-mode') === 'on') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      if (body.classList.contains('dark')) {
+        toggle.textContent = '☀️';
+        localStorage.setItem('dark-mode', 'on');
+      } else {
+        toggle.textContent = '🌙';
+        localStorage.setItem('dark-mode', 'off');
+      }
+    });
+  </script>
+</body>
+</html>

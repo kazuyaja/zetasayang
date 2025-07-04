@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  background-color: #004080;
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+footer {
+  margin-top: auto;
+}
+
+.main {
+  display: flex;
+}
+
+nav {
+  background-color: #eaf1f8;
+  padding: 25px;
+  width: 220px;
+  border-right: 2px solid #ccc;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin-bottom: 15px;
+}
+
+nav a {
+  color: #004080;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  transform: translateX(5px);
+  color: #007bff;
+}
+
+section {
+  flex: 1;
+  padding: 30px;
+  background-color: #ffffff;
+  margin: 20px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Form styling */
+form {
+  max-width: 400px;
+  margin: auto;
+  text-align: left;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #004080;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #007bff;
+}
+
+/* Animasi awal */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+header, footer, nav, section {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark header, body.dark footer {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+body.dark nav {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark nav a {
+  color: #fff;
+}
+
+body.dark nav a:hover {
+  color: #1e90ff;
+}
+
+body.dark section {
+  background-color: #1e1e1e;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+}
+
+body.dark input,
+body.dark textarea {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark button {
+  background-color: #333;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  section {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  header, footer {
+    padding: 15px;
+  }
+
+  button#darkToggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+}

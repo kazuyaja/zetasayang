@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" 
+content="width=device-width, initial-scale=1.0">
+  <title>Beranda - Website Karya Guna 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="darkToggle">🌙</button>
+
+  <header>
+    <h1>Website Karya Guna 2</h1>
+  </header>
+
+  <div class="main">
+    <nav>
+      <ul>
+        <li><a href="home.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2>Selamat Datang</h2>
+      <p>Ini adalah halaman utama website sederhana SMK Karya Guna 2.</p>
+      <img src="cewek.png."Foto sekolah atau logo width="300">
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Website Karya Guna 2</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    const body = document.body;
+    if (localStorage.getItem('dark-mode') === 'on') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      if (body.classList.contains('dark')) {
+        toggle.textContent = '☀️';
+        localStorage.setItem('dark-mode', 'on');
+      } else {
+        toggle.textContent = '🌙';
+        localStorage.setItem('dark-mode', 'off');
+      }
+    });
+  </script>
+</body>
+</html>
